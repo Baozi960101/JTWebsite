@@ -7,13 +7,13 @@ const BottomBox = styled.div`
   justify-content: flex-end;
   width: 100%;
   height: 100px;
-  background-color: #7b7b7b;
+  background-color: white;
   padding: 30px 90px;
   box-sizing: border-box;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: white;
+  color: #7b7b7b;
 `;
 
 export default function Bottom() {
