@@ -180,7 +180,11 @@ const HeaderDown = styled.div`
   ${(props) => props.$move && `max-height:400px`}
 `;
 
-const HeaderDownTitleDiv = styled.div`
+const HeaderDownTitleLink = styled(Link)`
+  text-decoration: none;
+`;
+
+const HeaderDownTitle = styled.div`
   padding-left: 5px;
   width: 100%;
   height: 40px;
@@ -188,11 +192,7 @@ const HeaderDownTitleDiv = styled.div`
   font-weight: 600;
   background-color: white;
   padding-top: 10px;
-`;
-
-const HeaderDownTitle = styled(Link)`
   color: black;
-  text-decoration: none;
 
   :hover {
     color: red;
@@ -211,9 +211,9 @@ const TopBottom = styled.img`
 
 const HeaderDownTitleBox = ({ to, text }) => {
   return (
-    <HeaderDownTitleDiv>
-      <HeaderDownTitle to={to}>{text}</HeaderDownTitle>
-    </HeaderDownTitleDiv>
+    <HeaderDownTitleLink to={to}>
+      <HeaderDownTitle>{text}</HeaderDownTitle>
+    </HeaderDownTitleLink>
   );
 };
 

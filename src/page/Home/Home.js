@@ -91,6 +91,54 @@ const LogoBackgroundBox = styled.div`
   justify-content: center;
   position: relative;
   padding-top: 70px;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const LogoBackgroundBoxRwd = styled.div`
+  width: 100%;
+  display: none;
+
+  @media screen and (max-width: 1050px) {
+    display: flex;
+  }
+`;
+
+const LogoBackgroundBoxRwdRight = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  height: 500px;
+
+  @media screen and (max-width: 500px) {
+    height: 400px;
+  }
+`;
+
+const ArgusImg = styled.img`
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+
+  @media screen and (max-width: 500px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+const LogoBackgroundBoxRwdLeft = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  height: 500px;
+
+  @media screen and (max-width: 500px) {
+    height: 400px;
+  }
 `;
 
 const RightBox = styled.div`
@@ -99,6 +147,10 @@ const RightBox = styled.div`
   z-index: 1;
   right: 0;
   margin-top: 300px;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
 `;
 
 const DotRight = styled.img`
@@ -118,7 +170,11 @@ const LeftBox = styled.div`
   position: absolute;
   z-index: 1;
   left: 0;
-  top: 100px; ;
+  top: 100px;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
 `;
 
 const DotLeft = styled.img`
@@ -139,6 +195,10 @@ const Cover02Box = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 100px;
+
+  @media screen and (max-width: 1050px) {
+    padding-top: 50px;
+  }
 `;
 
 const Cover03Box = styled.div`
@@ -219,6 +279,40 @@ export default function Home() {
           <Item toLink="/" style={FingerLogo} imgSrc={Finger} />
           <FirstBackground src={LogoBackground} />
         </LogoBackgroundBox>
+        <LogoBackgroundBoxRwd>
+          <LogoBackgroundBoxRwdLeft>
+            <Link to="/argus">
+              <ArgusImg src={Venus} />
+            </Link>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Link to="/mars">
+                <ArgusImg src={Mars} />
+              </Link>
+            </div>
+          </LogoBackgroundBoxRwdLeft>
+          <LogoBackgroundBoxRwdRight>
+            <Link to="/argus">
+              <ArgusImg src={Argus} />
+            </Link>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Link to="/mars">
+                <ArgusImg src={Zmax} />
+              </Link>
+            </div>
+          </LogoBackgroundBoxRwdRight>
+        </LogoBackgroundBoxRwd>
         <Cover02Background />
         <Cover03Background />
       </HomeMainBackground>
