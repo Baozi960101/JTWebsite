@@ -13,12 +13,17 @@ import Cover02 from "../../images/cover02.png";
 import Cover03 from "../../images/cover03.png";
 import { Transition } from "react-transition-group";
 import { Link } from "react-router-dom";
+import jianTongLogo from "../../images/jianTongLogo.png";
 
 const HomeMainBackground = styled.div`
   width: 100%;
   height: 2200px;
   background-image: url(${HomeBackground});
   z-index: 1;
+
+  @media screen and (max-width: 1050px) {
+    height: auto;
+  }
 `;
 
 const FirstBackground = styled.img`
@@ -100,9 +105,34 @@ const LogoBackgroundBox = styled.div`
 const LogoBackgroundBoxRwd = styled.div`
   width: 100%;
   display: none;
+  position: relative;
 
   @media screen and (max-width: 1050px) {
     display: flex;
+  }
+`;
+
+const LogoBackgroundBoxRwdBackground = styled.div`
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6f2;
+  z-index: 1;
+  position: absolute;
+  right: 25%;
+  top: 35%;
+  border: 1px solid white;
+`;
+
+const JTLogo = styled.img`
+  width: 50px;
+  height: 45px;
+
+  @media screen and (min-width: 501px) and (max-width: 1050px) {
+    width: 80px;
+    height: 75px;
   }
 `;
 
@@ -280,8 +310,11 @@ export default function Home() {
           <FirstBackground src={LogoBackground} />
         </LogoBackgroundBox>
         <LogoBackgroundBoxRwd>
+          <LogoBackgroundBoxRwdBackground>
+            <JTLogo src={jianTongLogo} />
+          </LogoBackgroundBoxRwdBackground>
           <LogoBackgroundBoxRwdLeft>
-            <Link to="/argus">
+            <Link style={{ zIndex: "2" }} to="/venus">
               <ArgusImg src={Venus} />
             </Link>
             <div
@@ -291,13 +324,13 @@ export default function Home() {
                 justifyContent: "center",
               }}
             >
-              <Link to="/mars">
+              <Link style={{ zIndex: "2" }} to="/mars">
                 <ArgusImg src={Mars} />
               </Link>
             </div>
           </LogoBackgroundBoxRwdLeft>
           <LogoBackgroundBoxRwdRight>
-            <Link to="/argus">
+            <Link style={{ zIndex: "2" }} to="/argus">
               <ArgusImg src={Argus} />
             </Link>
             <div
@@ -307,7 +340,7 @@ export default function Home() {
                 justifyContent: "center",
               }}
             >
-              <Link to="/mars">
+              <Link style={{ zIndex: "2" }} to="/z-max">
                 <ArgusImg src={Zmax} />
               </Link>
             </div>
