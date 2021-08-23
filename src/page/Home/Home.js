@@ -261,8 +261,52 @@ const Cover03Background = () => {
 
 const ImgLink = styled(Link)``;
 
+const ArgusTest = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  background-color: #f1e1ff;
+  opacity: 0.9;
+  z-index: 6;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  top: 310px;
+  left: 925px;
+  border-radius: 0px 20px 20px 20px;
+  color: black;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 26px;
+  font-weight: 600;
+
+  ${(props) => props.$move && `width:500px;height:300px;padding:30px;`}
+`;
+
+const LogoButton = styled.div`
+  border: 1px solid black;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  font-weight: 600;
+  font-size: 16px;
+`;
+
 export default function Home() {
-  const Item = ({ toLink, imgSrc, style }) => {
+  const [argusWindows, setArgusWindows] = useState(false);
+
+  function HandleArgus() {
+    if (argusWindows) {
+      setArgusWindows(false);
+    } else {
+      setArgusWindows(true);
+    }
+  }
+
+  const Item = ({ onClick, toLink, imgSrc, style }) => {
     const transitionStyles = {
       entering: { transform: "scale(1)", transition: "transform .5s" },
       entered: { transform: "scale(1.12)", transition: "transform .5s" },
@@ -282,6 +326,7 @@ export default function Home() {
 
     return (
       <ImgLink
+        onClick={onClick}
         to={toLink}
         style={style}
         onMouseOver={addmask}
@@ -302,8 +347,12 @@ export default function Home() {
         <DotRightBox />
         <DotLeftBox />
         <LogoBackgroundBox>
+          <ArgusTest $move={argusWindows}>
+            幫你分析輿情，潮流趨勢，快速將數據分析，提供您社交網站和其他平台上產生的數據蒐集、分類，進行決策分析，成為提高效率執行的重要關鍵因素...
+            <LogoButton>查看更多</LogoButton>
+          </ArgusTest>
           <Item toLink="/venus" style={VenusLogo} imgSrc={Venus} />
-          <Item toLink="/argus" style={ArgusLogo} imgSrc={Argus} />
+          <Item onClick={HandleArgus} style={ArgusLogo} imgSrc={Argus} />
           <Item toLink="/z-max" style={ZmaxLogo} imgSrc={Zmax} />
           <Item toLink="/mars" style={MarsLogo} imgSrc={Mars} />
           <Item toLink="/" style={FingerLogo} imgSrc={Finger} />
