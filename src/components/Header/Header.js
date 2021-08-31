@@ -176,7 +176,7 @@ const HeaderDown = styled.div`
   position: absolute;
   transition: max-height 0.3s ease-in-out;
   z-index: 1;
-  box-sizing:border-box;
+  box-sizing: border-box;
 
   ${(props) => props.$move && `max-height:400px`}
 `;

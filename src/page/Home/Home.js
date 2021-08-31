@@ -14,6 +14,7 @@ import Cover03 from "../../images/cover03.png";
 import { Transition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import jianTongLogo from "../../images/jianTongLogo.png";
+import backgroundRwd from "../../images/backgroundRwd.png";
 
 const HomeMainBackground = styled.div`
   width: 100%;
@@ -113,23 +114,25 @@ const LogoBackgroundBoxRwd = styled.div`
 `;
 
 const LogoBackgroundBoxRwdBackground = styled.div`
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e6e6f2;
+  background-image: url(${backgroundRwd});
+  background-size: contain;
   z-index: 1;
   position: absolute;
-  right: 25%;
-  top: 35%;
-  border: 1px solid white;
 `;
 
 const JTLogo = styled.img`
+  display: flex;
   width: 50px;
   height: 45px;
 
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
   @media screen and (min-width: 501px) and (max-width: 1050px) {
     width: 80px;
     height: 75px;
@@ -181,6 +184,10 @@ const RightBox = styled.div`
   @media screen and (max-width: 1050px) {
     display: none;
   }
+  @media screen and (min-width: 1050px) and (max-width: 1600px) {
+    width: 30%;
+    margin-top: 500px;
+  }
 `;
 
 const DotRight = styled.img`
@@ -204,6 +211,9 @@ const LeftBox = styled.div`
 
   @media screen and (max-width: 1050px) {
     display: none;
+  }
+  @media screen and (min-width: 1050px) and (max-width: 1600px) {
+    width: 30%;
   }
 `;
 
