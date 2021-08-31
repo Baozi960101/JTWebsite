@@ -152,7 +152,7 @@ const HeaderSubBox = styled.div`
     display: none;
   }
 `;
-const HeaderSubTitle = styled.div`
+const HeaderSubTitle = styled(Link)`
   position: relative;
   cursor: pointer;
   color: black;
