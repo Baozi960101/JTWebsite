@@ -269,21 +269,29 @@ const ArgusTest = styled.div`
   width: 0px;
   height: 0px;
   overflow: hidden;
-  background-color: #f1e1ff;
+  background-color: #d2e9ff;
   opacity: 0.9;
   z-index: 6;
   position: absolute;
   transition: all 0.3s ease-in-out;
-  top: 310px;
-  left: 925px;
+  top: 40%;
+  left: 62%;
   border-radius: 0px 20px 20px 20px;
+  border: 0;
   color: black;
   padding: 0px;
   box-sizing: border-box;
   font-size: 26px;
   font-weight: 600;
 
-  ${(props) => props.$move && `width:500px;height:300px;padding:30px;`}
+  @media screen and (min-width: 1050px) and (max-width: 1600px) {
+    top: 40%;
+    left: 62%;
+  }
+
+  ${(props) =>
+    props.$move &&
+    `width:500px;height:300px;padding:30px;border:3px solid #CEFFCE;`}
 `;
 
 const LogoButton = styled.div`

@@ -152,7 +152,7 @@ const HeaderSubBox = styled.div`
     display: none;
   }
 `;
-const HeaderSubTitle = styled(Link)`
+const HeaderSubTitle = styled.div`
   position: relative;
   cursor: pointer;
   color: black;
@@ -176,6 +176,7 @@ const HeaderDown = styled.div`
   position: absolute;
   transition: max-height 0.3s ease-in-out;
   z-index: 1;
+  box-sizing:border-box;
 
   ${(props) => props.$move && `max-height:400px`}
 `;
@@ -185,8 +186,8 @@ const HeaderDownTitleLink = styled(Link)`
 `;
 
 const HeaderDownTitle = styled.div`
-  padding-left: 5px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
   height: 40px;
   font-size: 20px;
   font-weight: 600;
@@ -317,7 +318,14 @@ export default function Header() {
         </HeaderMainBox>
         <HeaderSubBox>
           <HeaderSubTitle onMouseOver={dropDownOn} onMouseOut={dropDownOff}>
-            <div style={{ display: "flex" }}>
+            <div
+              style={{
+                width: "150px",
+                display: "flex",
+                justifyContent: "flex-end",
+                paddingRight: "15px",
+              }}
+            >
               產品介紹
               <HeaderDownArrow src={downArrow} />
             </div>
