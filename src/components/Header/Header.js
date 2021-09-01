@@ -17,7 +17,7 @@ const HeaderBox = styled.div`
   box-sizing: border-box;
   background-color: white;
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 800px) {
     align-items: center;
     padding: 0 30px 0 20px;
   }
@@ -32,7 +32,7 @@ const HeaderRwdMenuBottom = styled.img`
   width: 40px;
   height: 40px;
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 800px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ const HeaderSubBox = styled.div`
   font-size: 20px;
   font-weight: 600;
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;

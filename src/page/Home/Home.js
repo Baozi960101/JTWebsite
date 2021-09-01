@@ -370,7 +370,7 @@ export default function Home() {
             <LogoButton>查看更多</LogoButton>
           </ArgusTest>
           <Item toLink="/venus" style={VenusLogo} imgSrc={Venus} />
-          <Item onClick={HandleArgus} style={ArgusLogo} imgSrc={Argus} />
+          <Item toLink="/argus" style={ArgusLogo} imgSrc={Argus} />
           <Item toLink="/z-max" style={ZmaxLogo} imgSrc={Zmax} />
           <Item toLink="/mars" style={MarsLogo} imgSrc={Mars} />
           <Item toLink="/" style={FingerLogo} imgSrc={Finger} />
