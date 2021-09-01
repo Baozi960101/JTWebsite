@@ -312,7 +312,7 @@ export default function Header() {
         <HeaderMainBox to="/">
           <HeaderLogo src={jianTongLogo} />
           <HeaderMainTitleBox>
-            <HeaderMainTitle>整合數位媒體傳播</HeaderMainTitle>
+            <HeaderMainTitle>數位整合行銷</HeaderMainTitle>
             <HeaderMainSubTitle>建通股份有限公司</HeaderMainSubTitle>
           </HeaderMainTitleBox>
         </HeaderMainBox>
