@@ -18,7 +18,7 @@ import backgroundRwd from "../../images/backgroundRwd.png";
 
 const HomeMainBackground = styled.div`
   width: 100%;
-  height: 2200px;
+  height: 1800px;
   background-image: url(${HomeBackground});
   z-index: 1;
 

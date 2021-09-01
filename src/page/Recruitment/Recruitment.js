@@ -70,14 +70,6 @@ export default function Recruitment() {
             1111
           </RecruitmentTextTitleHref>
         </div>
-        <div style={{ width: "100%", display: "flex" }}>
-          <RecruitmentTextTitleHref
-            target="_blank"
-            href="https://www.518.com.tw/company-2JDA6w.html"
-          >
-            518
-          </RecruitmentTextTitleHref>
-        </div>
       </RecruitmentText>
     </>
   );
