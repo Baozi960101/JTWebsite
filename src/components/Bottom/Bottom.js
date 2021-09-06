@@ -6,7 +6,7 @@ const BottomBox = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  height: 100px;
+  height: auto;
   background-color: white;
   padding: 30px 90px;
   box-sizing: border-box;
@@ -15,6 +15,7 @@ const BottomBox = styled.div`
   letter-spacing: 1px;
   color: #7b7b7b;
 `;
+
 
 export default function Bottom() {
   return (

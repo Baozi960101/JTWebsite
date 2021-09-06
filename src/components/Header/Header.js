@@ -91,7 +91,7 @@ const MenuLeftSubTitleProduct = styled(Link)`
   padding-left: 30px;
 `;
 
-const MenuRight = styled.div`
+const MenuBackground = styled.div`
   width: 20%;
   height: 100%;
   background-color: black;
@@ -306,7 +306,7 @@ export default function Header() {
             </MenuLeftSubTitle>
           </MenuLeftMainBox>
         </MenuLeft>
-        <MenuRight onClick={HandleMenu}></MenuRight>
+        <MenuBackground onClick={HandleMenu} />
       </MenuBox>
       <HeaderBox>
         <HeaderMainBox to="/">
