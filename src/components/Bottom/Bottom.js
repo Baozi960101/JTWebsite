@@ -16,7 +16,6 @@ const BottomBox = styled.div`
   color: #7b7b7b;
 `;
 
-
 export default function Bottom() {
   return (
     <>

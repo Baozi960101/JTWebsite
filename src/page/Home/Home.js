@@ -14,6 +14,7 @@ import Cover03 from "../../images/cover03.png";
 import { Transition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import jianTongLogo from "../../images/jianTongLogo.png";
+import jthome from "../../images/jthome.png";
 import backgroundRwd from "../../images/backgroundRwd.png";
 
 const HomeMainBackground = styled.div`
@@ -80,6 +81,18 @@ const ZmaxLogo = {
   position: "absolute",
   marginLeft: "750px",
   marginTop: "240px",
+  boxSizing: "border-box",
+  transition: "all .5s",
+  zIndex: "1",
+  cursor: "pointer",
+};
+
+const JtBigLogo = {
+  maxWidth: "100%",
+  height: "auto",
+  position: "absolute",
+  marginLeft: "50px",
+  marginTop: "295px",
   boxSizing: "border-box",
   transition: "all .5s",
   zIndex: "1",
@@ -294,10 +307,6 @@ const ArgusTest = styled.div`
     top: 40%;
     left: 62%;
   }
-
-  ${(props) =>
-    props.$move &&
-    `width:500px;height:300px;padding:30px;border:3px solid #CEFFCE;`}
 `;
 
 const LogoButton = styled.div`
@@ -310,16 +319,6 @@ const LogoButton = styled.div`
 `;
 
 export default function Home() {
-  const [argusWindows, setArgusWindows] = useState(false);
-
-  function HandleArgus() {
-    if (argusWindows) {
-      setArgusWindows(false);
-    } else {
-      setArgusWindows(true);
-    }
-  }
-
   const Item = ({ onClick, toLink, imgSrc, style }) => {
     const transitionStyles = {
       entering: { transform: "scale(1)", transition: "transform .5s" },
@@ -361,13 +360,14 @@ export default function Home() {
         <DotRightBox />
         <DotLeftBox />
         <LogoBackgroundBox>
-          <ArgusTest $move={argusWindows}>
+          <ArgusTest>
             幫你分析輿情，潮流趨勢，快速將數據分析，提供您社交網站和其他平台上產生的數據蒐集、分類，進行決策分析，成為提高效率執行的重要關鍵因素...
             <LogoButton>查看更多</LogoButton>
           </ArgusTest>
           <Item toLink="/venus" style={VenusLogo} imgSrc={Venus} />
           <Item toLink="/argus" style={ArgusLogo} imgSrc={Argus} />
           <Item toLink="/z-max" style={ZmaxLogo} imgSrc={Zmax} />
+          <Item style={JtBigLogo} imgSrc={jthome} />
           <Item toLink="/mars" style={MarsLogo} imgSrc={Mars} />
           <Item toLink="/" style={FingerLogo} imgSrc={Finger} />
           <FirstBackground src={LogoBackground} />
